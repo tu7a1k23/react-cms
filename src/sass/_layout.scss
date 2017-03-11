@@ -1,0 +1,67 @@
+.vbox {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  overflow: hidden;
+  height: 100%;
+}
+
+.hbox {
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.flex {
+  flex: 1;
+}
+
+.stretch {
+  align-self: stretch;
+}
+
+.center-self {
+  align-self: center;
+}
+
+.main-start {
+  justify-content: flex-start;
+}
+
+.cross-start {
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+.main-center {
+  justify-content: center;
+}
+
+.cross-center {
+  align-items: center;
+  align-content: center;
+}
+
+.main-end {
+  justify-content: flex-end;
+}
+
+.cross-end {
+  align-items: flex-end;
+  align-content: flex-end;
+}
+
+.cross-stretch {
+  align-items: stretch;
+  align-content: stretch;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.nowrap {
+  flex-wrap: nowrap;
+}

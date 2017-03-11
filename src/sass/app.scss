@@ -1,0 +1,42 @@
+@import "variables";
+@import "bootstrap";
+@import "layout";
+
+#ajax-loader {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1050;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: none;
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -1rem;
+    margin-left: -1rem;
+  }
+}
+
+#notification {
+  .alert {
+    position: absolute;
+    width: 20rem;
+    height: 5rem;
+    top: 4rem;
+    right: 1rem;
+    padding: $size-sm $size;
+  }
+}
+
+html, body, #react-root, #react-root > section {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+main {
+  padding: $size-sm;
+}
