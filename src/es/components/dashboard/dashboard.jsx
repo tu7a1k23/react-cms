@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
+import store from '~/common/store';
 
+@store({
+  endpoint: 'api/dashboard'
+})
 export default class Dashboard extends Component {
   constructor(props) {
     super(props);
@@ -12,7 +16,7 @@ export default class Dashboard extends Component {
   }
 
   render() {
-    const { summary, total } = this.state.data;
+    const { summary, total } = this.state.data;console.log(this.props.data);
     return <section className="row">
       <div className="col-sm-8">
         <div id="donut-chart" />

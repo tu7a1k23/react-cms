@@ -6,7 +6,8 @@ import $ from 'jquery';
 import AppConfig from './common/config';
 import Utils from './common/utils';
 
-global.jQuery = require('jquery');
+global.jQuery = $;
+global.$ = $;
 global.Tether = require('tether');
 
 $(document).ajaxError((e, jqxhr, settings) => {
@@ -22,9 +23,9 @@ $(document).ajaxError((e, jqxhr, settings) => {
 
 $(async () => {
   const initialConfiguration = await $.ajax({
-      url: '/api/init',
-      type: 'GET',
-      contentType: 'application/json; charset=utf-8'
+    url: '/api/init',
+    type: 'GET',
+    contentType: 'application/json; charset=utf-8'
   });
   AppConfig.init(initialConfiguration);
   render(<Routes />, document.getElementById('react-root'));

@@ -14,34 +14,35 @@ import uglify from 'gulp-uglify';
 
 /*========== PATH ==========*/
 const DIST = 'dist',
-      SRC = 'src',
-      PATH = {
-        LIBS: DIST + '/libs',
-        SCSS: SRC + '/sass/**/*.scss',
-        CSS: DIST + '/css',
-        SCRIPT: SRC + '/es',
-        JS: DIST + '/js'
-      },
+  SRC = 'src',
+  PATH = {
+    LIBS: DIST + '/libs',
+    SCSS: SRC + '/sass/**/*.scss',
+    CSS: DIST + '/css',
+    SCRIPT: SRC + '/es',
+    JS: DIST + '/js'
+  },
 
-/*========== TASK ==========*/
-      DEPENDENCIES = [
-        'babel-polyfill',
-        'c3',
-        'jquery',
-        'tether',
-        'react',
-        'react-dom',
-        'react-router'
-      ],
+  /*========== TASK ==========*/
+  DEPENDENCIES = [
+    'babel-polyfill',
+    'bootstrap',
+    'c3',
+    'jquery',
+    'react',
+    'react-dom',
+    'react-router-dom',
+    'tether'
+  ],
 
-/*========== TASK ==========*/
-      TASK = {
-        DEL: 'del',
-        COPY: 'copy',
-        STYLE: 'style',
-        FRAMEWORK: 'framework',
-        SCRIPT: 'script'
-      };
+  /*========== TASK ==========*/
+  TASK = {
+    DEL: 'del',
+    COPY: 'copy',
+    STYLE: 'style',
+    FRAMEWORK: 'framework',
+    SCRIPT: 'script'
+  };
 
 gulp.task(TASK.DEL, () => {
   del([PATH.LIBS + '*']);
@@ -56,9 +57,9 @@ gulp.task(TASK.COPY, () => {
 
 gulp.task(TASK.STYLE, () => {
   return gulp.src(PATH.SCSS)
-      .pipe(sass({ outputStyle: 'compressed' })
+    .pipe(sass({ outputStyle: 'compressed' })
       .on('error', sass.logError))
-      .pipe(gulp.dest(PATH.CSS));
+    .pipe(gulp.dest(PATH.CSS));
 });
 
 gulp.task(TASK.FRAMEWORK, () => {
@@ -66,9 +67,9 @@ gulp.task(TASK.FRAMEWORK, () => {
   const bundler = browserify({ debug: false });
   DEPENDENCIES.forEach(lib => bundler.require(lib));
   return bundler.bundle()
-      .pipe(source('framework.min.js'))
-      .pipe(streamify(uglify()))
-      .pipe(gulp.dest(PATH.LIBS + '/js'));
+    .pipe(source('framework.min.js'))
+    .pipe(streamify(uglify()))
+    .pipe(gulp.dest(PATH.LIBS + '/js'));
 });
 
 gulp.task(TASK.SCRIPT, () => {
@@ -82,9 +83,9 @@ gulp.task(TASK.SCRIPT, () => {
   });
   DEPENDENCIES.forEach(function (lib) { bundler.external(lib); });
   return bundler.bundle()
-      .on('error', function (err) { console.log(err.message); this.emit('end'); })
-      .pipe(source('app.js'))
-      .pipe(gulp.dest(PATH.JS));
+    .on('error', function (err) { console.log(err.message); this.emit('end'); })
+    .pipe(source('app.js'))
+    .pipe(gulp.dest(PATH.JS));
 });
 
 gulp.task('default', [TASK.STYLE, TASK.SCRIPT], () => {

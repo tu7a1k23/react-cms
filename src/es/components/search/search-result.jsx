@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BootGrid } from './ux/bootstrap';
+import { BootGrid } from '~/ux/bootstrap';
 
 export default class SearchResult extends Component {
   render() {

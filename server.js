@@ -1,8 +1,6 @@
 import express from 'express';
-
-const init = {
-  name: 'Lionel Nguyen'
-}
+import init from './_data/init';
+import dashboard from './_data/dashboard';
 
 const app = express();
 
@@ -21,4 +19,8 @@ app.use('/', express.static('./dist'));
 
 app.get('/api/init', function(req, res) {
   res.send(init);
+});
+
+app.get('/api/dashboard', function(req, res) {
+  res.send(dashboard);
 });

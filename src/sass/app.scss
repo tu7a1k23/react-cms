@@ -1,6 +1,5 @@
 @import "variables";
 @import "bootstrap";
-@import "layout";
 
 #ajax-loader {
   position: absolute;
@@ -39,4 +38,8 @@ html, body, #react-root, #react-root > section {
 
 main {
   padding: $size-sm;
+}
+
+.flex {
+  flex: 1;
 }
