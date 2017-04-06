@@ -1,8 +1,0 @@
-[
-  ["PROCESSED", 100],
-  ["IN_ERROR", 20],
-  ["PROCESSING", 10],
-  ["DRAFT", 30],
-  ["SEEDED", 50],
-  ["AWATING_RECORD_REVIEW", 40]
-]

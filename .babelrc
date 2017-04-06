@@ -1,9 +1,9 @@
 {
   "presets": [ "es2015", "es2017", "react" ],
-  "plugins": [ 
-    "transform-decorators-legacy", 
+  "plugins": [
+    "transform-decorators-legacy",
     "transform-object-rest-spread",
-    ["root-import", { "rootPathSuffix": "src/es" }]
+    ["root-import", { "rootPathSuffix": "src/js" }]
   ],
   "ignore": "node_modules"
 }

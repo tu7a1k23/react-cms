@@ -1,0 +1,65 @@
+@import 'variables';
+
+.dashboard-stat {
+  .card {
+    &.Melee {
+      background-color: $red;
+    }
+    &.Shoot {
+      background-color: $blue;
+    }
+    &.Magic {
+      background-color: $green;
+    }
+    .card-block {
+      position: relative;
+      height: 6rem;
+      .visual {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        .fa {
+          color: $light-shadow;
+        }
+      }
+      .detail {
+        position: absolute;
+        right: 5px;
+        top: 10px;
+        text-align: right;
+        color: $light-shadow;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.c3 {
+  .c3-arc-Melee {
+    fill: $red !important;
+  }
+  .c3-arc-Shoot {
+    fill: $blue !important;
+  }
+  .c3-arc-Magic {
+    fill: $green !important;
+  }
+  .c3-legend-item-Melee .c3-legend-item-tile {
+    stroke: $red !important;
+  }
+  .c3-legend-item-Shoot .c3-legend-item-tile {
+    stroke: $blue !important;
+  }
+  .c3-legend-item-Magic .c3-legend-item-tile {
+    stroke: $green !important;
+  }
+  .c3-tooltip-name--Melee .name span {
+    background-color: $red !important;
+  }
+  .c3-tooltip-name--Shoot .name span {
+    background-color: $blue !important;
+  }
+  .c3-tooltip-name--Magic .name span {
+    background-color: $green !important;
+  }
+}

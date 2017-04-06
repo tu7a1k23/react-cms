@@ -1,0 +1,67 @@
+@import "variables";
+
+body {
+  background-color: $alice-blue;
+}
+
+p {
+  margin-bottom: $size-sm;
+}
+
+#{$a-tags} {
+  text-decoration: none !important;
+  color: $blue;
+}
+#{$button-tags} {
+  border-color: $gray;
+  background-color: $white;
+  color: $black;
+}
+#{$button-primary-tags} {
+  border-color: $blue;
+  background-color: $blue;
+  color: $white;
+}
+
+.navbar {
+  box-shadow: 0 0 5px $shadow;
+  background-color: $summer-sky;
+  padding: $size-sm;
+  &.fixed-bottom {
+    .text-muted {
+      margin-bottom: 0;
+    }
+  }
+  .navbar-text {
+    padding: 0;
+    line-height: 2.25;
+    color: $light-shadow;
+  }
+  .navbar-nav {
+    .nav-item {
+      margin-right: $size-sm;
+      .nav-link {
+        color: $light-shadow;
+        &.active, &:hover {
+          color: $white !important;
+        }
+      }
+    }
+  }
+  .navbar-brand {
+    color: $white !important;
+    font-weight: bold;
+    padding: 0;
+  }
+}
+
+.container-fluid, #{$col-tags} {
+  padding: 0 $size-sm;
+}
+.row {
+  margin: 0 (-$size-sm);
+}
+
+.btn {
+  cursor: pointer;
+}

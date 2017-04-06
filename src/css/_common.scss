@@ -1,5 +1,4 @@
 @import "variables";
-@import "bootstrap";
 
 #ajax-loader {
   position: absolute;
@@ -19,27 +18,16 @@
   }
 }
 
-#notification {
-  .alert {
-    position: absolute;
-    width: 20rem;
-    height: 5rem;
-    top: 4rem;
-    right: 1rem;
-    padding: $size-sm $size;
-  }
-}
-
 html, body, #react-root, #react-root > section {
   width: 100%;
   height: 100%;
   margin: 0;
 }
 
-main {
-  padding: $size-sm;
-}
-
 .flex {
   flex: 1;
+}
+
+main {
+  padding: $size-sm;
 }

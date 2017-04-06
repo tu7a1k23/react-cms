@@ -17,9 +17,9 @@ const DIST = 'dist',
   SRC = 'src',
   PATH = {
     LIBS: DIST + '/libs',
-    SCSS: SRC + '/sass/**/*.scss',
+    SCSS: SRC + '/css/**/*.scss',
     CSS: DIST + '/css',
-    SCRIPT: SRC + '/es',
+    SCRIPT: SRC + '/js',
     JS: DIST + '/js'
   },
 
@@ -28,11 +28,8 @@ const DIST = 'dist',
     'babel-polyfill',
     'bootstrap',
     'c3',
-    'jquery',
     'react',
-    'react-dom',
-    'react-router-dom',
-    'tether'
+    'react-dom'
   ],
 
   /*========== TASK ==========*/
@@ -74,7 +71,7 @@ gulp.task(TASK.FRAMEWORK, () => {
 
 gulp.task(TASK.SCRIPT, () => {
   const bundler = browserify({
-    entries: PATH.SCRIPT + '/app.jsx',
+    entries: PATH.SCRIPT + '/main.js',
     transform: [babelify],
     extensions: ['.jsx', '.js'],
     debug: true,
