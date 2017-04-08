@@ -65,3 +65,17 @@ p {
 .btn {
   cursor: pointer;
 }
+
+.table {
+  margin-bottom: 0;
+  thead {
+    background-color: $silver;
+  }
+
+  tbody {
+    background-color: $white;
+    td {
+      text-overflow: ellipsis;
+    }
+  }
+}

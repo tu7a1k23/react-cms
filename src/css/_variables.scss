@@ -8,17 +8,21 @@ $size-xxl: $size * 4;
 
 /***** COLOR *****/
 $white: #fff;
-$black: #000;
+$snow: #f9f9f9;
+$smoke: #f0f0f0;
+$solitude: #e3e4e6;
+$silver: #c5c5c5;
 $gray: #ccc;
-$red: #e7505a;
-$blue: #3598dc;
+$arsenic: #32404e;
+$black: #000;
+$red: #e91e63;
+$blue: #458fd2;
+$green: #4caf50;
 $alice-blue: #f5f8fa;
 $summer-sky: #3097d1;
-$green: #32c5d2;
 $shadow: rgba(0, 0, 0, .85);
 $light-shadow: rgba(255, 255, 255, .5);
 
-$font-size: $size / 6 * 7; /* 14px */
 $border: 1px solid $gray;
 
 /***** GROUP TAG *****/

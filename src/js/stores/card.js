@@ -7,5 +7,6 @@ export default class CardStore {
       url: '/api/cards',
       method: 'post'
     }
+    this.autoLoad = true
   }
 }

@@ -1,6 +1,5 @@
 import express from 'express'
 import init from './_data/init'
-import dashboard from './_data/dashboard'
 import cards from './_data/card'
 
 const app = express()

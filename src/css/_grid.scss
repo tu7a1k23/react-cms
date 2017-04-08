@@ -1,0 +1,38 @@
+@import "variables";
+
+.bootgrid {
+  overflow: hidden;
+  border: $border;
+  .bootgrid-header {
+    background-color: $solitude;
+    border-bottom: $border;
+    font-weight: bold;
+    overflow: hidden;
+    .bootgrid-header-container {
+      .bootgrid-column-header {
+        padding: $size-xs;
+        border-right: $border;
+      }
+    }
+  }
+  .bootgrid-body {
+    background-color: $white;
+    overflow: scroll;
+    .bootgrid-view {
+      height: auto;
+      .bootgrid-row {
+        &:nth-of-type(odd) {
+          background-color: $snow;
+        }
+        .bootgrid-cell {
+          padding: $size-xs;
+          border-bottom: $border;
+          border-right: $border;
+          &:last-child {
+            border-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
