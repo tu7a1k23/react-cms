@@ -1,12 +1,10 @@
 import { Store } from 'ext-react'
 
-@Store
-export default class CardStore {
-  constructor() {
-    this.proxy = {
-      url: '/api/cards',
-      method: 'post'
-    }
-    this.autoLoad = true
-  }
-}
+export default Store({
+  storeId: 'CardStore',
+  proxy: {
+    url: '/api/cards',
+    method: 'post'
+  },
+  autoLoad: true
+})

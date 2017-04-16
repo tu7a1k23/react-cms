@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-import Rext, { Container } from 'ext-react'
+import Rext, { Route, Container } from 'ext-react'
 import DashboardStore from '~/stores/dashboard'
 import AppConfig from '~/common/config'
 import Viz from '~/ux/viz'
 
 const DONUT_CHART_CONFIG = AppConfig.get('DONUT_CHART_CONFIG')
 
+@Route('/')
 @Container({
   stores: [DashboardStore]
 })

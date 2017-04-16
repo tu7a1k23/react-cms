@@ -4,7 +4,8 @@
   overflow: hidden;
   border: $border;
   .bootgrid-header {
-    background-color: $solitude;
+    background-color: #c5c5c5;
+    background-image: -webkit-linear-gradient(top, #f9f9f9, #e3e4e6);
     border-bottom: $border;
     font-weight: bold;
     overflow: hidden;
@@ -22,7 +23,7 @@
       height: auto;
       .bootgrid-row {
         &:nth-of-type(odd) {
-          background-color: $snow;
+          background-color: #fafafa;
         }
         .bootgrid-cell {
           padding: $size-xs;
