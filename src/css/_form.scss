@@ -1,0 +1,14 @@
+@import "variables";
+
+.btn-sm {
+  padding: 0 $size;
+  line-height: $size-lg;
+  font-size: $size;
+}
+
+.form-inline {
+  .form-control-sm {
+    font-size: $size;
+    padding: $size-xs $size-sm;
+  }
+}

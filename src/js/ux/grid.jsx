@@ -4,7 +4,7 @@ import $ from 'jquery'
 import { List } from 'ext-react'
 
 const HEADER_BORDER_SIZE = 2
-const SCROLL_SIZE = 17
+const SCROLL_SIZE = 8
 
 export default class Grid extends Component {
   constructor(props) {
@@ -34,29 +34,33 @@ export default class Grid extends Component {
     $(window).on('resize', this.resizeGrid.bind(this))
 
     const node = findDOMNode(this),
-          header = $(node).find('.bootgrid-header')
+          header = $(node).find('.rx-grid-header')
 
-    $(node).find('.bootgrid-body').on('scroll', function() { header.scrollLeft($(this).scrollLeft()) })
+    $(node).find('.rx-grid-body').on('scroll', function() { header.scrollLeft($(this).scrollLeft()) })
   }
 
   render() {
     const { outerWidth, outerHeight, bodyHeight, headerWidth, bodyWidth, columns, store: { data } } = this.state
-    return <section className="bootgrid" style={{ width: outerWidth, height: outerHeight }}>
-      <div className="bootgrid-header" style={{ width: outerWidth }}>
-        <div className="d-flex flex-row bootgrid-header-container" style={{ width: headerWidth }}>
+    return <section className="rx-grid" style={{ width: outerWidth, height: outerHeight }}>
+      <div className="rx-grid-header" style={{ width: outerWidth }}>
+        <div className="d-flex flex-row rx-grid-header-container" style={{ width: headerWidth }}>
           {columns.map(col => {
-            const { text, width, ...others } = col
-            return <div className="bootgrid-column-header text-sm-center" { ...others } style={{ width }}>{text || ''}</div>
+            const { text, width, className, ...others } = col
+            return <div className={`rx-grid-column-header text-sm-center ${className || ''}`} { ...others } style={{ width }}>
+              {text || ''}
+            </div>
           })}
         </div>
       </div>
-      <div className="bootgrid-body" style={{ width: outerWidth, height: bodyHeight }}>
-        <div className="d-flex flex-column bootgrid-view" style={{ width: bodyWidth }}>
+      <div className="rx-grid-body" style={{ width: outerWidth, height: bodyHeight }}>
+        <div className="d-flex flex-column rx-grid-view" style={{ width: bodyWidth }}>
           {data.map(record =>
-            <div className="d-flex flex-row bootgrid-row">
+            <div className="d-flex flex-row rx-grid-row">
               {columns.map(col => {
-                const { dataIndex, width, ...others } = col
-                return <div className="bootgrid-cell" { ...others } style={{ width }}>{record[dataIndex]}</div>
+                const { dataIndex, width, className, render, ...others } = col
+                return <div className={`rx-grid-cell ${className || ''}`} { ...others } style={{ width }}>
+                  {render ? render(record[dataIndex], record, dataIndex) : record[dataIndex]}
+                </div>
               })}
             </div>
           )}
@@ -71,7 +75,7 @@ export default class Grid extends Component {
           parentNode = node.parentNode,
           outerWidth = parentNode.clientWidth,
           outerHeight = parentNode.clientHeight,
-          header = $(node).find('.bootgrid-header'),
+          header = $(node).find('.rx-grid-header'),
           headerHeight = header.height() + HEADER_BORDER_SIZE,
           bodyHeight = outerHeight - headerHeight,
           flexColumn = []

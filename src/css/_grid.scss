@@ -1,31 +1,34 @@
-@import "variables";
+@import "theme";
 
-.bootgrid {
+.rx-grid {
   overflow: hidden;
   border: $border;
-  .bootgrid-header {
+  .rx-grid-header {
     background-color: #c5c5c5;
     background-image: -webkit-linear-gradient(top, #f9f9f9, #e3e4e6);
     border-bottom: $border;
     font-weight: bold;
     overflow: hidden;
-    .bootgrid-header-container {
-      .bootgrid-column-header {
+    .rx-grid-header-container {
+      .rx-grid-column-header {
         padding: $size-xs;
         border-right: $border;
       }
     }
   }
-  .bootgrid-body {
+  .rx-grid-body {
     background-color: $white;
     overflow: scroll;
-    .bootgrid-view {
+    .rx-grid-view {
       height: auto;
-      .bootgrid-row {
-        &:nth-of-type(odd) {
+      .rx-grid-row {
+        &:nth-of-type(even) {
           background-color: #fafafa;
         }
-        .bootgrid-cell {
+        &:hover {
+          background-color: #efefef;
+        }
+        .rx-grid-cell {
           padding: $size-xs;
           border-bottom: $border;
           border-right: $border;

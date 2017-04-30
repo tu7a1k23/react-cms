@@ -1,0 +1,61 @@
+@import "variables";
+
+.flex {
+  flex: 1;
+}
+
+.navbar {
+  padding: $size-sm $size;
+  .navbar-brand {
+    font-size: $size-lg;
+  }
+}
+
+.nav-tabs {
+  .nav-item {
+    margin-right: $size-sm;
+    .nav-link {
+      padding: $size-sm $size;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+main {
+  padding: $size-sm;
+  overflow: auto;
+}
+
+.container-fluid, #{$col-tags} {
+  padding: 0 $size-sm;
+}
+.row {
+  margin: 0 (-$size-sm);
+}
+
+.card {
+  border-radius: 0;
+  .card-block {
+    padding: $size-sm;
+  }
+}
+
+// #ajax-loader {
+//   position: absolute;
+//   top: 0;
+//   bottom: 0;
+//   left: 0;
+//   right: 0;
+//   z-index: 1050;
+//   background-color: rgba(0, 0, 0, 0.2);
+//   display: none;
+//   img {
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     margin-top: -1rem;
+//     margin-left: -1rem;
+//   }
+// }

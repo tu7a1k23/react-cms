@@ -1,31 +1,17 @@
 import React, { Component } from 'react'
 import CardService from '~/services/card'
-import { Button, Text } from '~/components/bootstrap'
+import { Button, Text } from '~/ux/bootstrap'
 
 export default class SearchForm extends Component {
   render() {
     return <section>
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-sm-4 offset-sm-2 form-group">
-            <Text placeholder="Card Name" />
-          </div>
-          <div className="col-sm-4 form-group">
-            <Text placeholder="Card Type" />
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-sm-4 offset-sm-2 form-group">
-            <Text placeholder="Armor Usable" />
-          </div>
-          <div className="col-sm-4 form-group">
-            <Text placeholder="Weapon Usable" />
-          </div>
-        </div>
-        <div className="text-sm-center">
-          <Button type="primary" text="Filter" onClick={() => this.onSearch()} />
-          <Button text="Clear" />
-        </div>
+      <div className="form-inline mb-sm">
+        <Text placeholder="Card Name" className="mr-sm" />
+        <Text placeholder="Card Type" className="mr-sm" />
+        <Text placeholder="Armor Usable" className="mr-sm" />
+        <Text placeholder="Weapon Usable" className="mr-sm" />
+        <Button type="primary" text="Filter" className="mr-sm" onClick={() => this.onSearch()} />
+        <Button text="Clear" />
       </div>
     </section>
   }
