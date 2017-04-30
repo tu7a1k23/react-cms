@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import { Link, HashRouter } from 'ext-react'
 import Config from '~/common/config'
-import { Panel, Button } from '~/ux/bootstrap'
+import { Button } from '~/ux/bootstrap'
+import Container from '~/ux/container'
 import Navigation from './navigation'
 
 export default class Viewport extends Component {
   render() {
-    return <section className="d-flex flex-column">
+    return <Container>
       <header className="navbar navbar-toggleable-md">
         <Link to="/" className="navbar-brand">React CMS</Link>
         <div className="collapse navbar-collapse">
@@ -19,17 +20,15 @@ export default class Viewport extends Component {
           </span>
         </div>
       </header>
-      <main className="flex d-flex flex-column">
+      <Container className="main-container">
         <Navigation />
-        <Panel>
-          <HashRouter />
-        </Panel>
-      </main>
+        <HashRouter />
+      </Container>
       <footer className="navbar navbar-toggleable-md">
         <div className="container-fluid">
           <p>&copy; 2017 huytrongnguyen</p>
         </div>
       </footer>
-    </section>
+    </Container>
   }
 }

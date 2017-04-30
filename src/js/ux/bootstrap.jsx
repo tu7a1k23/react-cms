@@ -1,13 +1,5 @@
 import React, { Component } from 'react'
 
-export const Panel = ({ children, ...others }) => {
-  return <section className="card flex" {...others}>
-    <div className="card-block d-flex flex-column">
-      {children}
-    </div>
-  </section>
-}
-
 export const Button = ({ type = 'secondary', className = '', text, children, ...others }) => {
   className = `btn btn-sm btn-${type} ${className}`
   return <button type="button" className={className} {...others}>{text || children}</button>

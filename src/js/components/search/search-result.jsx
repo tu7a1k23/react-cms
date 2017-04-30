@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import CardStore from '~/stores/card'
 import Grid from '~/ux/grid'
-import { Checkbox, Link } from '~/ux/bootstrap'
+import { Checkbox, Link, Button } from '~/ux/bootstrap'
+import Container from '~/ux/container'
 import DialogManager from '~/ux/dialog'
 import CardDetailDialog from '~/components/card/card-detail-dialog'
 
@@ -12,7 +13,8 @@ export default class SearchResult extends Component {
   }
 
   render() {
-    return <section className="flex">
+    return <Container>
+    <Container>
       <Grid store={CardStore}>
         <div dataIndex="Id" width={30} render={() => <Checkbox />} />
         <div text="Name" dataIndex="Name" width={250} render={(name) => <Link text={name} onClick={this.showCardDetailDialog} />} />
@@ -27,7 +29,11 @@ export default class SearchResult extends Component {
         <div text="Armor" dataIndex="ArmorUsable" width={100} />
         <div text="Weapon" dataIndex="WeaponUsable" width={100} />
       </Grid>
-    </section>
+    </Container>
+    <div class="form-inline">
+      <Button text="Save Changes" />
+    </div>
+    </Container>
   }
 
   showCardDetailDialog() {
