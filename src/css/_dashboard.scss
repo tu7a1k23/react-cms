@@ -19,7 +19,7 @@
         left: 0;
         bottom: 0;
         .fa {
-          color: $light-shadow;
+          color: rgba(255, 255, 255, .5);
         }
       }
       .detail {
@@ -27,7 +27,7 @@
         right: 5px;
         top: 10px;
         text-align: right;
-        color: $light-shadow;
+        color: rgba(255, 255, 255, .5);
         font-weight: bold;
       }
     }

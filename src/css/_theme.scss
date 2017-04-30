@@ -8,7 +8,7 @@ $border: 1px solid $border-color;
 
 .navbar {
   background-image: $header-bg-image;
-  box-shadow: 0 0 5px $shadow;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .85);
   .navbar-brand {
     color: $black !important;
     font-weight: bold;
@@ -92,5 +92,39 @@ $border: 1px solid $border-color;
   background: rgba(0, 0, 0, 0.2);
   &:hover {
     background: rgba(0, 0, 0, 0.4);
+  }
+}
+
+.dialog {
+  background-color: $bg-color;
+  border-radius: $size-xs;
+  box-shadow: rgba(0, 0, 0, 0.31) 0px 0px 1px, rgba(0, 0, 0, 0.18) 0px 0px 5px, rgba(0, 0, 0, 0.3) 0px 8px 50px;
+  .dialog-header {
+    min-height: $size-lg;
+    background-image: $header-bg-image;
+    border-bottom: 1px solid #afafaf;
+    border-top: 1px solid #f6f6f6;
+    border-top-left-radius: $size-xs;
+    border-top-right-radius: $size-xs;
+    padding: 0 $size-xs;
+    .dialog-title {
+      font-weight: bold;
+    }
+    .tool {
+      position: absolute;
+      top: $size-xs;
+      right: $size-xs;
+      width: $size;
+      height: $size;
+      font-size: $size;
+      line-height: 0;
+      background-color: $red;
+      border: 1px solid #e2463f;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
+  .dialog-body {
+    padding: $size-xs;
   }
 }
