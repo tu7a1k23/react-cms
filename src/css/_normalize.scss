@@ -23,7 +23,7 @@
   }
 }
 
-.main-container {
+main {
   padding: $size-sm;
   overflow: auto;
 }
@@ -35,7 +35,7 @@
   margin: 0 (-$size-sm);
 }
 
-.panel {
+.card {
   padding: $size-sm;
 }
 

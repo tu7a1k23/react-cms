@@ -16,18 +16,16 @@ import uglify from 'gulp-uglify';
 const DIST = 'dist',
   SRC = 'src',
   PATH = {
-    LIBS: DIST + '/libs',
+    LIBS: DIST + '/libs/',
     SCSS: SRC + '/css/**/*.scss',
     CSS: DIST + '/css',
-    SCRIPT: SRC + '/js',
+    SCRIPT: SRC + '/js/',
     JS: DIST + '/js'
   },
 
   /*========== TASK ==========*/
   DEPENDENCIES = [
     'babel-polyfill',
-    'bootstrap',
-    'c3',
     'react',
     'react-dom'
   ],
@@ -46,10 +44,7 @@ gulp.task(TASK.DEL, () => {
 });
 
 gulp.task(TASK.COPY, () => {
-  gulp.src('./node_modules/bootstrap/dist/**/*').pipe(gulp.dest(PATH.LIBS));
-  gulp.src('./node_modules/c3/*.css').pipe(gulp.dest(PATH.LIBS + '/css'));
-  gulp.src('./node_modules/font-awesome/css/**/*').pipe(gulp.dest(PATH.LIBS + '/css'));
-  gulp.src('./node_modules/font-awesome/fonts/**/*').pipe(gulp.dest(PATH.LIBS + '/fonts'));
+  gulp.src('./node_modules/ext-react/dist/css/*.css').pipe(gulp.dest(PATH.LIBS + 'css'));
 });
 
 gulp.task(TASK.STYLE, () => {
@@ -66,12 +61,12 @@ gulp.task(TASK.FRAMEWORK, () => {
   return bundler.bundle()
     .pipe(source('framework.min.js'))
     .pipe(streamify(uglify()))
-    .pipe(gulp.dest(PATH.LIBS + '/js'));
+    .pipe(gulp.dest(PATH.LIBS + 'js'));
 });
 
 gulp.task(TASK.SCRIPT, () => {
   const bundler = browserify({
-    entries: PATH.SCRIPT + '/main.js',
+    entries: PATH.SCRIPT + 'main.js',
     transform: [babelify],
     extensions: ['.jsx', '.js'],
     debug: true,

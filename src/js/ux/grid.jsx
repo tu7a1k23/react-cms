@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { findDOMNode } from 'react-dom'
-import $ from 'jquery'
+// import $ from 'jquery'
 import { List } from 'ext-react'
 
 const HEADER_BORDER_SIZE = 2
@@ -31,12 +31,12 @@ export default class Grid extends Component {
     }
 
     this.resizeGrid()
-    $(window).on('resize', this.resizeGrid.bind(this))
+    // $(window).on('resize', this.resizeGrid.bind(this))
 
     const node = findDOMNode(this),
           header = $(node).find('.rx-grid-header')
 
-    $(node).find('.rx-grid-body').on('scroll', function() { header.scrollLeft($(this).scrollLeft()) })
+    // $(node).find('.rx-grid-body').on('scroll', function() { header.scrollLeft($(this).scrollLeft()) })
   }
 
   render() {

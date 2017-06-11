@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Rext from 'ext-react'
 import { findDOMNode } from 'react-dom'
-import c3 from 'c3'
+// import c3 from 'c3'
 
 export default class Viz extends Component {
   componentDidMount() {
@@ -16,7 +16,7 @@ export default class Viz extends Component {
     config = Rext.extend({}, config, {
       bindto: findDOMNode(this)
     })
-    c3.generate(config)
+    // c3.generate(config)
   }
 
   render() {

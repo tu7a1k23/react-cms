@@ -6,7 +6,7 @@ import SearchResult from './search-result'
 @Route('/search')
 export default class Search extends Component {
   render() {
-    return <section className="panel d-flex flex-column">
+    return <section className="d-flex flex-column card">
       <SearchForm />
       <SearchResult />
     </section>

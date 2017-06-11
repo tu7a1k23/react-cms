@@ -38,9 +38,10 @@ $border: 1px solid $border-color;
   }
 }
 
-.panel {
+.card {
   background-color: $white;
   border: $border;
+  border-radius: 0;
 }
 
 .form-control:focus {
