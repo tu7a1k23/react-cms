@@ -1,11 +1,12 @@
-import React, { Component } from 'react'
-import { Route } from 'ext-react'
+import React from 'react';
+import { Route, Component, Container } from 'ext-react';
 
 @Route('*')
-export default class NotFound extends Component {
-  render() {
-    return <section>
-      <h1>Not Found</h1>
-    </section>
+@Component({
+  view: ({ vm }) => <Container className="panel-body"><h1>{vm.title}</h1></Container>
+})
+export default class {
+  constructor() {
+    this.title = 'Not Found';
   }
 }
