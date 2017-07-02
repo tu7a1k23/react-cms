@@ -11,6 +11,7 @@ import babelify from 'babelify';
 import source from 'vinyl-source-stream';
 import streamify from 'gulp-streamify';
 import uglify from 'gulp-uglify';
+import watchify from 'watchify';
 
 /*========== PATH ==========*/
 const DIST = 'dist',
@@ -26,6 +27,8 @@ const DIST = 'dist',
   /*========== TASK ==========*/
   DEPENDENCIES = [
     'babel-polyfill',
+    'ext-react',
+    'd3',
     'react',
     'react-dom'
   ],
@@ -65,17 +68,17 @@ gulp.task(TASK.FRAMEWORK, () => {
 });
 
 gulp.task(TASK.SCRIPT, () => {
-  const bundler = browserify({
+  const bundler = bundler || watchify(browserify({
     entries: PATH.SCRIPT + 'main.js',
     transform: [babelify],
     extensions: ['.jsx', '.js'],
     debug: true,
     cache: {},
     packageCache: {}
-  });
+  }));
   DEPENDENCIES.forEach(function (lib) { bundler.external(lib); });
   return bundler.bundle()
-    .on('error', function (err) { console.log(err.message); this.emit('end'); })
+    .on('error', function (err) { console.error(err.toString()); this.emit('end'); })
     .pipe(source('app.js'))
     .pipe(gulp.dest(PATH.JS));
 });
@@ -87,5 +90,5 @@ gulp.task('default', [TASK.STYLE, TASK.SCRIPT], () => {
   //  - Ensure ./ in the value for cwd
   const watchOpt = { cwd: './' };
   gulp.watch(PATH.SCSS, watchOpt, [TASK.STYLE]);
-  gulp.watch([PATH.SCRIPT + '/**/*.js', PATH.SCRIPT + '/**/*.jsx'], watchOpt, [TASK.SCRIPT]);
+  gulp.watch([`${PATH.SCRIPT}/**/*.js`, `${PATH.SCRIPT}/**/*.jsx`], watchOpt, [TASK.SCRIPT]);
 });

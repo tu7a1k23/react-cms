@@ -9,7 +9,4 @@ import CardCreate from './components/card/card-create';
 import CardDetail from './components/card/card-detail';
 import NotFound from './components/notfound/notfound';
 
-Rext.launch(async () => {
-  await CommonService.initApp();
-  return <Viewport />;
-});
+Rext.launch(<Viewport />);
