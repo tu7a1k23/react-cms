@@ -1687,9 +1687,9 @@ express@4.15.3:
     utils-merge "1.0.0"
     vary "~1.1.1"
 
-ext-react@1.6.2:
-  version "1.6.2"
-  resolved "https://registry.yarnpkg.com/ext-react/-/ext-react-1.6.2.tgz#b67abdb790588da66f7252756a546e7abe799ad2"
+ext-react@1.7.1:
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/ext-react/-/ext-react-1.7.1.tgz#380867483180712097e8e758ba5f9a1e67e2f9c0"
 
 extend@^3.0.0, extend@~3.0.0:
   version "3.0.1"

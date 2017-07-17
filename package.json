@@ -29,7 +29,7 @@
   "dependencies": {
     "babel-polyfill": "6.23.0",
     "d3":"4.9.1",
-    "ext-react": "1.6.2",
+    "ext-react": "1.7.1",
     "react": "15.6.1",
     "react-dom": "15.6.1"
   },
