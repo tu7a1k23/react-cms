@@ -3,14 +3,12 @@ import { Link, Cache } from 'ext-react';
 
 export default class extends Component {
   render() {
-    return <header>
+    return <header className="bg-inverse">
       <div className="brand">React CMS</div>
       <div className="navbar">
         <ul className="navbar-nav mr-auto">
-          <Link to="/" className="nav-item">Dashboard</Link>
-          <Link to="/search" className="nav-item">Search</Link>
-          <Link to="/reporting" className="nav-item">Reporting</Link>
-          <Link to="/admin" className="nav-item">Administration</Link>
+          <Link to="/" className="nav-item">Characters</Link>
+          <Link to="/items" className="nav-item">Items</Link>
         </ul>
         <div>Hello, <strong>{Cache.get('configuration').name}</strong></div>
       </div>

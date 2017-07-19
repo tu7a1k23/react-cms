@@ -1,0 +1,35 @@
+.brand, .navbar { line-height: 1.875rem; }
+.brand { cursor: default; }
+.navbar { padding: 0; }
+.bg-inverse {
+  background-color: #404040;
+  background-image: -webkit-linear-gradient(top, #4d4d4d, #333);
+  border-bottom: 1px solid #1a1a1a;
+  .brand { color: #f5f5f5; text-shadow: 0 1px 0 #1a1a1a; }
+  .navbar {
+    color: #f5f5f5; text-shadow: 0 1px 0 #1a1a1a;
+    a {
+      color: #ccc;
+      &.active, &:hover { color: #f5f5f5; text-shadow: 0 1px 0 #1a1a1a; }
+    }
+  }
+}
+.bg-success {
+  background-image: -webkit-linear-gradient(top, #8fc33a, #739b2e);
+  border-bottom: 1px solid #567422;
+  .brand { color: #fff; text-shadow: 0 1px 0 #4e691f; }
+  .navbar {
+    color: #fff; text-shadow: 0 1px 0 #4e691f;
+    a { color: #fff; text-shadow: 0 1px 0 #4e691f; }
+  }
+}
+.bg-primary {
+  background-color: #3892d4;
+  background-image: -webkit-linear-gradient(top, #4c9dd8, #3892d4 50%, #358bc9 51%, #3892d4);
+  border-bottom: 1px solid #126daf;
+  .brand { color: #fff; }
+  .navbar {
+    color: #fff;
+    a { color: #fff; }
+  }
+}

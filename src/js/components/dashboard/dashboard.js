@@ -3,7 +3,6 @@ import * as d3 from 'd3';
 import { Route, Component } from 'ext-react';
 import DashboardView from './dashboard.view';
 
-@Route('/')
 @Component({
   view: DashboardView
 })
