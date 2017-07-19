@@ -6,4 +6,7 @@ import Viewport from './components/viewport/viewport';
 import Card from './components/card/card';
 import NotFound from './components/notfound/notfound';
 
-Rext.launch(<Viewport />);
+Rext.launch(async () => {
+  await CommonService.initApp();
+  return <Viewport />
+});

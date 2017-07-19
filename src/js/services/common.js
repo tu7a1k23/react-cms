@@ -1,9 +1,9 @@
-import Rext, { Service } from 'ext-react'
+import Rext, { Service, Cache } from 'ext-react'
 import Config from '~/common/config'
 
 @Service
 export default class CommonService {
   async initApp() {
-    Config.add(await Rext.ajax({ url: '/api/init' }))
+    Cache.set('configuration', await Rext.ajax({ url: '/data/configuration.json' }));
   }
 }
