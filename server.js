@@ -13,4 +13,4 @@ app.listen(port, (err) => {
   console.log('App is listening at port %s', port);
 });
 
-app.use('/', express.static('./'));
+app.use('/', express.static('./dist'));
